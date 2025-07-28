@@ -1,17 +1,18 @@
 
-# Online Appendix: Long-Text Privacy Policy Corpus
+# Online Appendix for _Building a Long Text Privacy Policy Corpus with Multi-Class Labels_
+## The `PrivacyPolicyDense` Dataset
 
-This folder contains the online appendix for the paper [Building a Long Text Privacy Policy Corpus with Multi-Class Labels](https://aclanthology.org/2025.acl-long.401/) (Marotta-Wurgler & Stein, ACL 2025), containing the dataset described by that paper.
+This repository is an online appendix for the paper [Building a Long Text Privacy Policy Corpus with Multi-Class Labels](https://aclanthology.org/2025.acl-long.401/) (Marotta-Wurgler & Stein, ACL 2025), and contains the dataset described by that paper.
 
-## Overview
+### Overview
 
 The appendix is structured into three `.ndjson` files, which contain newline-separated JSON objects. 
 
 ---
 
-## Files
+### Files
 
-### `questions.ndjson`
+#### `questions.ndjson`
 
 A structured list of the 64 questions used to annotate the data, grouped into 11 legal categories (e.g., CCPA, GDPR, Enforcement).
 
@@ -23,7 +24,7 @@ Each entry includes:
 * `allow_multiselect`: Whether the question supports multiple answers
 * `options`: List of answer options with display text and IDs
 
-### `privacy_policies.ndjson`
+#### `privacy_policies.ndjson`
 
 Contains full text of the privacy policy for each website, including incorporated documents.
 
@@ -39,7 +40,7 @@ Each entry includes:
 
 Note that there are some artifacts in the markdown (e.g., parsed navbar links at the top of files). The indicies in `coding_values.ndjson` include those artifacts. 
 
-### `coding_values.ndjson`
+#### `coding_values.ndjson`
 
 Human annotation results for each (website, question) pair.
 
@@ -54,7 +55,7 @@ Each entry includes:
     * `reported_likert_confidence`: self-reported confidence on a 1-5 likert scale, where `1` is least confident and `5` is most confident. If the coder did not report confidence the value is recorded as `null`.
     * `highlighted_sentences`: A list of triples `[doc_id, paragraph_idx, sentence_idx]` referencing (`doc_id`s and indicies from `privacy_policies.nsjson`). Each triple denotes a sentence that the coders marked as relevant for the given question.
 
-## License and Citation
+### License and Citation
 
 This dataset is made available under the Open Data Commons Attribution License: http://opendatacommons.org/licenses/by/1.0/
 
