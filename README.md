@@ -1,5 +1,8 @@
 
 # Online Appendix for _Building a Long Text Privacy Policy Corpus with Multi-Class Labels_
+
+> **Note (2025-07-28) — these files contain raw expert annotations. We may augment this dataset with additional annotations from reviewers.**
+
 ## The `PrivacyPolicyLong` Dataset
 
 This repository is an online appendix for the paper [Building a Long Text Privacy Policy Corpus with Multi-Class Labels](https://aclanthology.org/2025.acl-long.401/) (Marotta-Wurgler & Stein, ACL 2025), and contains the dataset described by that paper.
@@ -61,6 +64,7 @@ Each entry includes:
     * `selected_option_labels`: Chosen answer option(s)
     * `reported_likert_confidence`: self-reported confidence on a 1-5 likert scale, where `1` is least confident and `5` is most confident. If the coder did not report confidence the value is recorded as `null`.
     * `highlighted_sentences`: A list of triples `[doc_id, paragraph_idx, sentence_idx]` referencing (`doc_id`s and indicies from `privacy_policies.nsjson`). Each triple denotes a sentence that the coders marked as relevant for the given question.
+  * (PENDING)\[optional] `review_response`: contains the same fields as a single entry in `responses` and have `coder_id` set to `"REVIEW"`. These responses were added by the (law professor) authors after discussion with the expert annotators and secondary review of the policy and question. 
 
 </details>
 
