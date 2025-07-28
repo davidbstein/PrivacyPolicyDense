@@ -1,6 +1,6 @@
 
 # Online Appendix for _Building a Long Text Privacy Policy Corpus with Multi-Class Labels_
-## The `PrivacyPolicyDense` Dataset
+## The `PrivacyPolicyLong` Dataset
 
 This repository is an online appendix for the paper [Building a Long Text Privacy Policy Corpus with Multi-Class Labels](https://aclanthology.org/2025.acl-long.401/) (Marotta-Wurgler & Stein, ACL 2025), and contains the dataset described by that paper.
 
@@ -11,11 +11,12 @@ The appendix is structured into three `.ndjson` files, which contain newline-sep
 ---
 
 ### Files
-
 #### `questions.ndjson`
 
-A structured list of the 64 questions used to annotate the data, grouped into 11 legal categories (e.g., CCPA, GDPR, Enforcement).
+> The 64 questions used to annotate the policies, grouped into 11 legal categories (e.g., CCPA, GDPR, Enforcement).
 
+<details>
+<summary>see details...</summary>
 Each entry includes:
 
 * `label`: A unique identifier for the question
@@ -23,11 +24,14 @@ Each entry includes:
 * `question`: The text of the question
 * `allow_multiselect`: Whether the question supports multiple answers
 * `options`: List of answer options with display text and IDs
+</details>
 
 #### `privacy_policies.ndjson`
 
-Contains full text of the privacy policy for each website, including incorporated documents.
+> Full text of the privacy policy for each website, including incorporated documents.
 
+<details>
+<summary>see details...</summary>
 Each entry includes:
 
 * `url`: The firm's domain
@@ -39,11 +43,14 @@ Each entry includes:
   * `format`: Always `markdown`. The data follows a strict subset of the "commonmark" markdown specification.
 
 Note that there are some artifacts in the markdown (e.g., parsed navbar links at the top of files). The indicies in `coding_values.ndjson` include those artifacts. 
+</details>
 
 #### `coding_values.ndjson`
 
-Human annotation results for each (website, question) pair.
+> Human annotation for each (website, question) pair.
 
+<details>
+<summary>see details...</summary>
 Each entry includes:
   
   * `url`: The firm's domain
@@ -55,9 +62,9 @@ Each entry includes:
     * `reported_likert_confidence`: self-reported confidence on a 1-5 likert scale, where `1` is least confident and `5` is most confident. If the coder did not report confidence the value is recorded as `null`.
     * `highlighted_sentences`: A list of triples `[doc_id, paragraph_idx, sentence_idx]` referencing (`doc_id`s and indicies from `privacy_policies.nsjson`). Each triple denotes a sentence that the coders marked as relevant for the given question.
 
-### License and Citation
+</details>
 
-This dataset is made available under the Open Data Commons Attribution License: http://opendatacommons.org/licenses/by/1.0/
+### Citation
 
 If you use this dataset, please cite:
 
@@ -80,5 +87,10 @@ If you use this dataset, please cite:
     ISBN = "979-8-89176-251-0"
 }
 ```
+
+### License
+
+This dataset is made available under the Open Data Commons Attribution License: http://opendatacommons.org/licenses/by/1.0/
+
 
 <!-- a first draft of this README was generated using an LLM -->
